@@ -16,6 +16,7 @@ function schema(){
 		CREATE TABLE Seller(
 			sellerId char(20) NOT NULL,
 			firstName char(50) NOT NULL,
+			password char(50) NOT NULL,
 			lastName char(50),
 			userName char(50) NOT NULL,
 			storeName varchar(200) NOT NULL,

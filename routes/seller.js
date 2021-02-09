@@ -1,18 +1,23 @@
-module.exports = function(seller){
 
-	seller.get('/', verification, ()=>{
+var express = require('express');
+var router = express.Router();
+module.exports = function(connections){
+
+	router.get('/', ()=>{
 	})
 
-	seller.post('/post-seller', verification, ()=>{
-
+	router.post('/post-seller',  (req, res)=>{
+			console.log(req.body)
+			res.status(200).send('posted!');
 	})
-	seller.get('/:userId', verification, ()=>{
+	router.get('/:userId', ()=>{
 
 	});
-	seller.put('/edit-user/:userId', verification, ()=>{
+	router.put('/edit-user/:userId', ()=>{
 
 	});
-	seller.delete('/:userId', verification, ()=>{
-		
+	router.delete('/:userId', ()=>{
 	});
+
+	return router;
 }

@@ -80,7 +80,7 @@ function uniqueIdProductCreation(connections, keys, values){
 	keys.push('productId');
 	let query = `INSERT INTO Product(${keys.join(' ')}) VALUES ${'? '.repeat(keys.length)}`
 	connections.query('Select * FROM Product WHERE productId = ?', productId, (err, result, fields)=>{
-		if(err) return {err:err1, result:null};;
+		if(err) return {err:err1, result:null}
 		else{
 			if(result.length){
 				return uniqueIdProductCreation(connections, keys, values)

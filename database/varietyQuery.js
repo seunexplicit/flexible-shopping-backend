@@ -56,7 +56,7 @@ function uniqueIdVarietyCreation(connections, keys, values){
 	let varietiesId = idGenerator(15, values.length);
 	let query = `INSERT INTO Product(${keys.join(' ')}) VALUES ${'? '.repeat(keys.length)}`
 	connections.query(`SELECT * FROM Varieties WHERE varietyId IN (${varietiesId.join(', ')})`, (err, result, fields)=>{
-		if(err) return {err:err1, result:null};;
+		if(err) return {err:err1, result:null}
 		else{
 			if(result.length){
 				return uniqueIdProductCreation(connections, keys, values)

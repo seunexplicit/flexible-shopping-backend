@@ -3,12 +3,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var cors = require(cors);
+var cors = require('cors');
 var mysql = require('mysql');
 var dbSchema = require('./database/schema');
 
-var sellerRouter = require('./routes/product');
-var productRouter = require('./routes/seller');
+var sellerRouter = require('./routes/seller');
+var productRouter = require('./routes/product');
 
 var app = express();
 
